@@ -13,13 +13,14 @@ export class AuthController {
     return this.authService.login(body.username, body.password);
   }
 
-  @Role('admin')
-  @UseGuards(JwtGuard, RoleGuard)
+  // @Role('admin')
+  @UseGuards(JwtGuard)
+  // @UseGuards(JwtGuard, RoleGuard)
   @Get('test-auth')
   test(@Req() req) {
     console.log(req.user);
     return {
-      name: 'Luiz Carlos',
+      name: 'FELIPE USUARIO',
     };
   }
 }
